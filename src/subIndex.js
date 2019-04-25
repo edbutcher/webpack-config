@@ -10,7 +10,9 @@ function component(tagName, content, className) {
 }
 
 const HEADER = 'header';
-const FOOTER = 'footer'
+const FOOTER = 'footer';
 
-document.body.appendChild(component(HEADER, HEADER, HEADER));
-document.body.appendChild(component(FOOTER, FOOTER, FOOTER));
+export default () => {
+  document.body.appendChild(component(HEADER, HEADER, HEADER));
+  document.body.appendChild(component(FOOTER, FOOTER, FOOTER));
+};
