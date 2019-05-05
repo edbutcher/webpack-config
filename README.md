@@ -7,7 +7,7 @@ To start the project:
 
 For linting the project:
 * `npm run lint`
-`The project is linted before the build.`
+`The project is linted before build.`
 
 To build the project:
 * `npm build`

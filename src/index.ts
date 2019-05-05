@@ -1,18 +1,28 @@
-import module from './subIndex';
+import Http from './request';
 import './style.scss';
 
-function component(tagName: string, content: string, className: string): any {
-  const element = document.createElement(tagName);
+const component = (
+  tagName: string,
+  content: string,
+  className: string
+): HTMLElement => {
+  const elementDOM = document.createElement(tagName);
+  elementDOM.innerHTML = content;
+  elementDOM.classList.add(className);
+  return elementDOM;
+};
 
-  element.innerHTML = content;
-  element.classList.add(className);
+const MAIN = 'main';
+document.body.appendChild(component(MAIN, MAIN, MAIN));
 
-  return element;
+async function getData(url: string): Promise<void> {
+  const answer = await Http.get(url);
+  console.log(answer);
+  if (answer.next) {
+    getData(answer.next);
+  } else {
+    console.log('End');
+  }
 }
 
-const HEADER = 'header';
-const MAIN = 'main';
-
-document.body.appendChild(component(HEADER, HEADER, HEADER));
-document.body.appendChild(component(MAIN, MAIN, MAIN));
-module();
+getData('https://swapi.co/api/planets/');

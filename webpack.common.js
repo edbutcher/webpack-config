@@ -3,15 +3,16 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: {
-        app: "./src/index.ts"
-    },
+    entry: [
+        'babel-polyfill',
+        './src/index.ts'
+    ],
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ["babel-loader", "eslint-loader"]
+                use: ['babel-loader', "eslint-loader"]
             },
             {
                 test: /\.tsx?$/,
