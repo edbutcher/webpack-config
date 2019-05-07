@@ -1,11 +1,4 @@
 class Http {
-  constructor() {
-    this.get = this.get;
-    this.post = this.post;
-    this.put = this.put;
-    this.delete = this.delete;
-  }
-
   static _request(method = 'GET', url = '', body = {}) {
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
@@ -26,40 +19,20 @@ class Http {
     });
   }
 
-  async get(url = '') {
-    try {
-      let response = await Http._request('GET', url);
-      return JSON.parse(response);
-    } catch (err) {
-      console.log('Get data failed', err);
-    }
+  get(url = '') {
+    return Http._request('GET', url);
   }
 
-  async post(url, body) {
-    try {
-      const response = await Http._request('POST', url, body);
-      return JSON.parse(response);
-    } catch (err) {
-      console.log('Post data failed', err);
-    }
+  post(url, body) {
+    return Http._request('POST', url, body);
   }
 
-  async put(url, body) {
-    try {
-      const response = await Http._request('PUT', url, body);
-      return JSON.parse(response);
-    } catch (err) {
-      console.log('Put data failed', err);
-    }
+  put(url, body) {
+    return Http._request('PUT', url, body);
   }
 
-  async delete(url, body) {
-    try {
-      const response = await Http._request('DELETE', url, body);
-      return JSON.parse(response);
-    } catch (err) {
-      console.log('Delete data failed', err);
-    }
+  delete(url, body) {
+    return Http._request('DELETE', url, body);
   }
 }
 
