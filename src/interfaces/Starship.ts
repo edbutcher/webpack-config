@@ -1,0 +1,20 @@
+export interface Starship {
+  name: string;
+  model: string;
+  manufacturer: string;
+  cost_in_credits: number;
+  length: number;
+  max_atmosphering_speed: string;
+  crew: number;
+  passengers: number;
+  cargo_capacity: number;
+  consumables: string;
+  hyperdrive_rating: string;
+  MGLT: number;
+  starship_class: string;
+  pilots: object[]; 
+  films: string[];
+  created: string;
+  edited: string;
+  url: string;
+};
