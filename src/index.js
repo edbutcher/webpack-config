@@ -34,8 +34,11 @@ for (const val of wars) {
   console.log(val);
 }
 
-new Book('Eragorn', 200);
-new Book('Emma', 19);
-new Book('Ed', 22);
-new Book('Butcher', 24);
-Bookshelf.read();
+const bookshelf = new Bookshelf();
+
+bookshelf.pushBook(new Book('Eragorn', 200));
+bookshelf.pushBook(new Book('Emma', 19));
+bookshelf.pushBook(new Book('Ed', 22));
+bookshelf.pushBook(new Book('Butcher', 24));
+
+bookshelf.read();

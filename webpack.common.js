@@ -7,6 +7,9 @@ module.exports = {
         'babel-polyfill',
         './src/index.js'
     ],
+    resolve: {
+        extensions: ['.ts', '.js']
+    },
     module: {
         rules: [
             {

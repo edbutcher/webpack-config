@@ -1,10 +1,7 @@
-import Bookshelf from './Bookshelf';
-
 class Book {
   constructor(name = 'Unknown', age = 0) {
     this.name = name;
     this.age = age;
-    Bookshelf.shelf = this;
   }
   story() {
     return `${

@@ -1,18 +1,18 @@
 class Bookshelf {
-  static _shelf = [];
-  static set shelf(book) {
-    Bookshelf._shelf.push(book);
+  constructor() {
+    this.shelf = [];
   }
-  static get shelf() {
-    return Bookshelf._shelf;
+  pushBook(book) {
+    this.shelf.push(book);
   }
-  static read() {
-    const generator = (function*() {
-      let i = 0;
-      while (Bookshelf.shelf.length > i) {
-        yield Bookshelf.shelf[i++];
-      }
-    })();
+  *generate() {
+    let i = 0;
+    while (this.shelf.length > i) {
+      yield this.shelf[i++];
+    }
+  }
+  read() {
+    const generator = this.generate();
     for (let iterator of generator) {
       for (let item of iterator) {
         console.log(item);
