@@ -7,6 +7,6 @@ export interface IPerson {
 	eyeColor: string;
 	birthYear: string;
 	gender: string;
-	homeworld:string;
+	homeWorld:string;
 	url: string;
 }

@@ -1,41 +1,52 @@
-import PersonAbstract from "./interfaces/IPerson.abstract";
+import PersonAbstract from './interfaces/IPerson.abstract';
+import { IPerson } from './interfaces/IPerson.dto';
 
 export class Person extends PersonAbstract {
-  constructor(
-    public name: string,
-    public height: string,
-    public mass: string,
-    public hairColor: string,
-    public skinColor: string,
-    public eyeColor: string,
-    public birthYear: string,
-    public gender: string,
-    public homeworld:string,
-    public url: string,
+  public name: string;
+  public height: string;
+  public mass: string;
+  public hairColor: string;
+  public skinColor: string;
+  public eyeColor: string;
+  public birthYear: string;
+  public gender: string;
+  public homeWorld: string;
+  public url: string;
+  public constructor(
+    name: string,
+    height: string,
+    mass: string,
+    hairColor: string,
+    skinColor: string,
+    eyeColor: string,
+    birthYear: string,
+    gender: string,
+    homeWorld: string,
+    url: string
   ) {
     super(
-      name = '',
-      height = '',
-      mass = '',
-      hairColor = '',
-      skinColor = '',
-      eyeColor = '',
-      birthYear = '',
-      gender = '',
-      homeworld = '',
-      url = '',
+      name,
+      height,
+      mass,
+      hairColor,
+      skinColor,
+      eyeColor,
+      birthYear,
+      gender,
+      homeWorld,
+      url
     );
   }
-  getName() {
+  public getName(): string {
     return this.name;
   }
-  getHeight() {
+  public getHeight(): string {
     return this.height;
   }
-  getGender() {
+  public getGender(): string {
     return this.gender;
   }
-  getInfo() {
+  public getInfo(): IPerson {
     return {
       name: this.name,
       height: this.height,
@@ -45,7 +56,7 @@ export class Person extends PersonAbstract {
       eyeColor: this.eyeColor,
       birthYear: this.birthYear,
       gender: this.gender,
-      homeworld: this.homeworld,
+      homeWorld: this.homeWorld,
       url: this.url,
     };
   }
