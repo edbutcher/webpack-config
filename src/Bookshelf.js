@@ -6,18 +6,15 @@ class Bookshelf {
     this.shelf.push(book);
   }
   *generate() {
-    let i = 0;
-    while (this.shelf.length > i) {
-      yield this.shelf[i++];
+    for (const book of this.shelf) {
+      yield book;
     }
   }
   read() {
-    const generator = this.generate();
-    for (let iterator of generator) {
-      for (let item of iterator) {
-        console.log(item);
-      }
-    }
+    const shelf = this.generate();
+    Array.from(shelf).forEach(book =>
+      Array.from(book).forEach(sentence => console.log(sentence))
+    );
   }
 }
 
