@@ -11,7 +11,7 @@ abstract class PersonAbstract implements IPerson {
   public gender: string;
   public homeWorld: string;
   public url: string;
-  protected constructor(
+  public constructor(
     name: string,
     height: string,
     mass: string,
